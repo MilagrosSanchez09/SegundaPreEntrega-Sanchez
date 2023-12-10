@@ -7,7 +7,7 @@ export const getAllProducts = async (req, res, next) => {
   try {
     const { page, limit, sort, query } = req.query;
 
-    const products = await productManager.getAll(page, limit, sort, query)
+    const products = await productManager.getProducts(page, limit, sort, query)
 
     let srtOptions = "";
     if  (limit){

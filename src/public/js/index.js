@@ -19,11 +19,10 @@ form.onsubmit = (e)=> {
     e.preventDefault();
     const title = inputTitle.value;
     const description = inputDescription.value;
-    const code = inputCode.value;
     const price = inputPrice.value;
     const stock = inputStock.value;
     const category = inputCategory.value;
-    const product = {title, description, code, price, stock, category};
+    const product = {title, description, price, stock, category};
     console.log("Enviando producto:", product);
     socketClient.emit('newProduct', product);
 };
@@ -39,4 +38,9 @@ socketClient.on('arrayProducts', (productsArray) => {
 
 socketClient.on('message', (msg) => {
     console.log(msg);
+});
+
+document.getElementById('form').addEventListener('submit', function(event){
+    event.preventDefault();
+    window.location.href = '/views/register';
 });

@@ -1,7 +1,14 @@
+<h1>Welcome to the Home Page!</h1>
 
-<h1>HOME</h1>
-    <ul>
-        {{#each products}}
-        <li>Nombre del producto: {{this.title}} - Descripción: {{this.description}} - Precio: Precio: {{this.price}}<hr></li>
-        {{/each}}
-    </ul>
+{{#if user}}
+<h2>Hello, {{user.name}}!</h2>
+{{else}}
+<p>Please log in to access personalized content.</p>
+{{/if}}
+<ul>
+    {{#each products}}
+    <li>Nombre del producto: {{this.name}} - Descripción: {{this.description}} - Precio: Precio: {{this.price}}
+        <hr>
+    </li>
+    {{/each}}
+</ul>

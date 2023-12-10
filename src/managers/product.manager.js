@@ -1,8 +1,9 @@
+// import { model } from "mongoose";
 import { ProductModel } from "../models/product.model.js";
 
 export default class ProductManager {
 
-    async getAll(page=1, limit=10, sortOrder='desc', query=null) {
+    async getProducts(page=1, limit=10, sortOrder='desc', query=null) {
         try{
             let queryObject = query ? JSON.parse(query) : {};
             
